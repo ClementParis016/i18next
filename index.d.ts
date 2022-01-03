@@ -890,7 +890,7 @@ export interface NewableModule<T extends Module> extends Newable<T> {
   type: T['type'];
 }
 
-export interface i18n {
+export interface i18n<Language extends string> {
   // Expose parameterized t in the i18next interface hierarchy
   t: TFunction;
 
@@ -974,7 +974,7 @@ export interface i18n {
    * Is set to the current resolved language.
    * It can be used as primary used language, for example in a language switcher.
    */
-  resolvedLanguage: string;
+  resolvedLanguage: Language;
 
   /**
    * Loads additional namespaces not defined in init options.
